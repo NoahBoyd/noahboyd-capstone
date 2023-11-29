@@ -1,0 +1,586 @@
+.App {
+  text-align: center;
+  /* Styles that makes it so the navbar and screen content can take up 100vh since site content uses flex-grow: 1 to make it take up the remaining space */
+  display: flex; 
+  flex-direction: column;
+  height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Navigation Bar ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.navigationBarLink {
+  text-decoration: none;
+  color: black;
+}
+
+.pagenav {
+  background-color: #f5efea;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.045);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Landing Page ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.PageContent {
+  flex-grow: 1; /* Make this div grow to take up remaining space */
+  background-color: #f5efea;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Login / Signup Page ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.loginFormContainer {
+  height: 50%;
+  display: flex;
+}
+
+/* Testing with image */
+
+.loginFormContainerTest {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  background-color: yellow;
+}
+
+.loginImageContainer {
+  height: 100%;
+  background-color: green;
+  overflow: none;
+}
+
+.login-input {
+  width: 80%;
+}
+
+.error-text {
+  color: red;
+}
+
+.signup-form, .login-form {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #F5F5F5;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Profile Overview Page ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.profileOveriview--container {
+  /* background-color: rgba(99, 154, 123, 0.638); */
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.profileOverview--left {
+  /* background-color: rgb(249, 81, 112); */
+  height: 100%;
+  width: 50%;
+  /* border-right: 1px solid rgba(0, 0, 0, 0.619); */
+}
+
+.profileOverview--right {
+  /* background-color: rgb(110, 45, 118); */
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.profileInfo--container {
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile--button {
+  height: 200px;
+  width: 200px;
+  background-color: #e6e0e0 !important;
+  border: none !important;
+}
+
+.profile--button:hover {
+  background-color: #cabebe !important;
+}
+
+.profile--profile_picture {
+  cursor: pointer;
+} 
+
+
+.upload-profile-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-btn-primary {
+  background-color: #e6e0e0 !important;
+  border: none !important;
+  color: black !important;
+}
+
+.app-btn-primary--active {
+  background-color: #cabebe !important;
+  border: none !important;
+  color: black !important;
+}
+
+.app-btn-primary:hover {
+  background-color: #cabebe !important;
+}
+
+.app-btn-action {
+  background-color: #cbe1b7 !important;
+  border: none !important;
+  color: black !important;
+}
+
+.app-btn-action:hover {
+  background-color: #c0e49f !important;
+}
+
+.app-btn-danger {
+  background-color: #c3696a !important;
+  border: none !important;
+}
+
+.app-btn-danger:hover {
+  background-color: #c05052 !important;
+  border: none !important;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Home Page ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.home--top {
+  height: 50%;
+}
+
+.home--bottom {
+  height: 50%;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CardList ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.cardlist--container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: rgba(112, 112, 255, 0.65); */
+  /* border: 1px solid black; */
+}
+
+.cardlist--header {
+  height: 15%;
+  /* background-color: rgba(161, 15, 161, 0.59); */
+  align-items: flex-start;
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
+  align-items: center;
+}
+
+.cardlist--title {
+  font-size: 150%;
+}
+
+.cardlist--card-container {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 85%;
+  width: 100%;
+  gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow-x: auto;
+  /* overflow-x: scroll; */
+  /* Styles for Webkit Scrollbars */
+  &::-webkit-scrollbar {
+    height: 8px; /* Adjust as per your preference */
+  }
+  
+  &::-webkit-scrollbar-track {
+    background-color: #f4f4f4; /* background scrollbar color */
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: #888; /* bar of scrollbar color */
+    border-radius: 4px;
+    &:hover {
+      background-color: #555;
+    }
+  }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CookbookCardList ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.cookbookcardlist--container {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.cookbookRecipeCard {
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Card ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.card--container {
+  height: 200px;
+  min-width: 200px;
+  /* background-color: rgb(130, 153, 227); */
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.card--image-container {
+  height: 70%;
+  width: 100%;
+  background-color: rgba(107, 100, 154, 0.36);
+  border-radius: 15px 15px 0 0;
+}
+
+.card--title-container {
+  height: 30%;
+  width: 100%;
+  /* background-color: beige; */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Create Recipe ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.createRecipeFormTitle {
+  font-size: 150%;
+  font-weight: 600;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Recipe View ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.recipeView-section {
+  width: 80%;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #F5F5F5;
+}
+
+.recipeView-section--comments {
+  border: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.recipe-times {
+  justify-content: space-evenly;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comments ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.recipeComment {
+  width: 100%;
+  background-color: #F5F5F5;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  min-height: 5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-comments-list {
+  width: 100%;
+}
+
+.recipeComment--author, .recipeComment--comment {
+  text-align: start;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 50%;
+  padding: 1rem;
+  flex-grow: 1;
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
+.recipeComment--author {
+  display: flex;
+  align-items: flex-start;
+  height: 4rem;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 15px;
+}
+
+.recipeComment--comment {
+  background-color: rgb(234, 221, 206);
+  border-radius: 15px;
+}
+
+.author--photo {
+  height: 4rem;
+  width: 4rem;
+  background-color: rgba(0, 128, 0, 0.559);
+  border-radius: 50%;
+}
+
+.author--photo img {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  display: block; /* To remove any extra space below the image */
+  border-radius: 50%;
+}
+
+.comment-responsive-width {
+  width: 75%;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Add to cookbook ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.addToCookbook-header {
+  display: flex;
+  width: 100%;
+  justify-content: center; /* Center the text in the header */
+  padding-top: 1rem;
+  text-align: center; /* Center align the header text */
+}
+
+.addRecipe--list-container {
+  border: 1px solid rgba(0, 0, 0, 0.342);
+  border-radius: 15px;
+  width: 60%;
+  padding: 1rem; /* Add padding inside the container */
+  margin: auto; /* Center the container */
+}
+
+.addRecipesUL {
+  list-style-type: none; /* Remove default list style */
+  width: 100%;
+  padding: 0;
+}
+
+.addRecipesUL > div { /* Styling each list item */
+  display: flex;
+  justify-content: space-between; /* Space between recipe name and button */
+  align-items: center; /* Align items vertically in the center */
+  margin-bottom: 0.5rem; /* Space between list items */
+}
+
+
+.cookbook-setting--container {
+  border: 1px solid salmon;
+  height: auto;
+  width: 100%;
+}
+
+.height-100-percent {
+  height: 100%;
+}
+
+.managecookbook--container {
+  height: 100%;
+  width: 100%;
+  /* background-color: rgba(255, 192, 203, 0.525); */
+  display: flex;
+  flex-direction: column;
+}
+
+.managecookbook-settings {
+  display: flex;
+  flex-direction: column;
+}
+
+.managecookbook--header {
+  height: 8%;
+  width: 100%;
+  /* background-color: olivedrab; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.managecookbook--body {
+  height: 100%;
+  width: 100%;
+  background-color: powderblue;
+}
+
+.responsive-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Adjust as per your design */
+  gap: 1rem; /* Space between cards */
+}
+
+.card--container-responsive {
+  width: calc(33.333% - 1rem); /* Example for 3 cards per row */
+  max-width: 300px; /* Adjust as needed */
+  height: 200px;
+  /* background-color: rgb(130, 153, 227); */
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.landing-tagline {
+  font-size: 400%;
+  font-weight: 700;
+  text-align: start;
+}
+
+.landing-description {
+  text-align: start;
+  margin-bottom: 2rem;
+}
+
+.landing-image {
+  width: 80%;
+  border-radius: 50%;
+}
+
+.round-form-border {
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+}
+
+.card--image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  display: block; /* To remove any extra space below the image */
+  border-radius: 15px 15px 0 0;
+}
+
+.recipe-view-image-container {
+  width: 100%;
+  min-height: 200px;
+  max-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.recipe-view-image-container img {
+  width: 100%; /* Full width on smaller screens */
+  max-width: 50%; /* Limit to 80% on larger screens */
+  max-height: 100%; /* Limit the height to the container's height */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain;
+  margin: auto;
+}
+
+
+@media (max-width: 900px)  {
+  /* Your CSS styles for small screens go here */
+  .profileOverview--right {
+    flex-direction: column;
+  }
+
+  .profile--button {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .recipeView-details-section {
+    flex-direction: column;
+  }
+
+  .rating-favourite {
+    flex-direction: column;
+  }
+  
+  .comment-responsive-width {
+    width: 100%;
+  }
+
+  .cookbookcardlist--container {
+    flex-direction: column;
+  }
+
+  .responsive-card-list {
+    flex-direction: column;
+  
+  }
+
+  .card--container-responsive {
+    width: calc(50% - 1rem); /* 2 cards per row for smaller screens */
+  }
+
+  .landing-tagline {
+    font-size: 200%;
+  }
+
+  .landing-image {
+    width: 100%;
+  }
+
+  .recipe-view-image-container img {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 100%; /* Limit to 80% on larger screens */
+  }
+  
+}
