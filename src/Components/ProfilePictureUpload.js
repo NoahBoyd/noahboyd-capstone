@@ -53,6 +53,8 @@ function ProfilePictureUpload({ userId, handleNewProfilePic, type }) {
   return (
     <Container className='upload-profile-container'>
       <input type="file" onChange={handleFileChange} />
+      <br />
+      <span style={{color: 'red'}}><sub>(1 MB Limit)</sub></span>
       <button onClick={handleUpload}>Upload</button>
     </Container>
   );
