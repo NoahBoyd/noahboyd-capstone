@@ -26,6 +26,7 @@ function Home(props) {
       // Make Axios request
       const response = await axios.post(url, {recipeIDArray},  {withCredentials: true,});
       // Check if the response is successful (status 200)
+      console.log(response);
       if (response.status === 200) {
         setUserRecipeImages(response.data.images);
       } else if (response.status === 404)  {
