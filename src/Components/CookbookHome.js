@@ -37,6 +37,7 @@ function CookbookHome({ userData }) {
     const [cookbookRatings, setCookbookRatings] = useState([]);
     const [chartDataValid, setChartDataValid] = useState(false);
     const [recipePhotos, setRecipePhotos] = useState([]);
+    const [filteredRecipePhotos, setFilteredRecipePhotos] = useState([]);
     const { id } = useParams(); // RECIPE ID PASSED AS PARAMETER TO ROUTE
 
     // -------------------------------------------------------------------------- Functions -----------------------------------------------------------------------------------------------------
@@ -95,6 +96,7 @@ function CookbookHome({ userData }) {
           // Check if the response is successful (status 200)
           if (response.status === 200) {
             setRecipePhotos(response.data.images);
+            setFilteredRecipePhotos(response.data.images)
           } else if (response.status === 404)  {
           }
         } catch (error) {
@@ -286,11 +288,18 @@ function CookbookHome({ userData }) {
                 return recipe
             }
         })
+
+         // Filter the recipe photos
+         const recipeIDs = filtered.map((recipe) => recipe.recipe_id);
+         const filteredPhotos = recipePhotos.filter(recipe => recipeIDs.includes(recipe.recipeID));
+
         setIsFiltered(true);
         setFilterValue(tag);
         setFilteredRecipes(filtered)
+        setFilteredRecipePhotos(filteredPhotos);
         } else {
             setFilteredRecipes(cookbookRecipes);
+            setFilteredRecipePhotos(recipePhotos);
             setIsFiltered(false);
             setFilterValue("");
         }
@@ -370,7 +379,7 @@ function CookbookHome({ userData }) {
                     </Container>
                 </div>
                 <Container className='pt-3'>
-                    <ResponsiveCardList type={'recipe'} items={filteredRecipes} userData={userDetails} images={recipePhotos}/>
+                    <ResponsiveCardList type={'recipe'} items={filteredRecipes} userData={userDetails} images={filteredRecipePhotos}/>
                 </Container>
             </div>
         </div>
