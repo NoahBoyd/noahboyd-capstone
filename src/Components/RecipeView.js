@@ -357,7 +357,7 @@ const fetchCommentPhotos = async (commentObjs) => {
                     <Form onSubmit={handleCommentSubmit}>
                       <Row>
                         <Col sm={10}><Form.Control type='text' placeholder={"Enter Comment..."} className='w-100 mb-2' onChange={(e) => setNewCommentText(e.target.value)} value={newCommentText}/></Col>
-                        <Col sm={2}><Button className='w-100 app-btn-action'>Submit</Button></Col>
+                        <Col sm={2}><Button type="submit" className='w-100 app-btn-action'>Submit</Button></Col>
                       </Row>
                     </Form>
                   </div>

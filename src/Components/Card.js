@@ -22,7 +22,7 @@ function Card( { type, data, userData, image }) {
       <img src={image ? image : placeholderImage} alt="Base64 Encoded" />
       </div>
       <div className='card--title-container'>
-        <span>{data['name']}</span>
+        <span style={data.name.length > 50 ? {fontSize: '70%'} : {}}>{data['name']}</span>
       </div>
     </div>
   )
