@@ -360,7 +360,7 @@ function CookbookHome({ userData }) {
                 <h1>{cookbookDetails.name}</h1>
                 <div className='d-flex gap-3' style={{marginRight: '1rem'}}>
                     <Button className='btn btn-sm h-80 app-btn-primary' onClick={handleAddRecipeClick}>Add Recipe +</Button>
-                    <Button className='btn btn-sm h-80 app-btn-primary' onClick={() => setShowSettings(true)}>Settings</Button>
+                    {cookbookDetails.user_id === userDetails.user_id ? <Button className='btn btn-sm h-80 app-btn-primary' onClick={() => setShowSettings(true)}>Settings</Button> : ""}
                     <Button className='btn btn-sm h-80 app-btn-primary' onClick={() => handleShowStats()}>View Stats</Button>
                 </div>
             </div>
